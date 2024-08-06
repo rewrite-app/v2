@@ -12,15 +12,18 @@ import RewriteSheet from "@/Components/Complex/RewriteSheet.jsx";
 import { selectedBlockAtom } from "@/atoms/selectedBlockAtom.js";
 import { articleAtom } from "@/atoms/articleAtom.js";
 import Footer from "@/Components/Core/Footer.jsx";
+import Page from "@/Components/Core/Page.jsx";
+import { Avatar, AvatarFallback } from "@/shadcn/components/ui/avatar.jsx";
+import MobileNavbar from "@/Components/Core/Navigation/MobileNavbar.jsx";
+import SmNavbar from "@/Components/Core/Navigation/SmNavbar.jsx";
+import LgNavbar from "@/Components/Core/Navigation/LgNavbar.jsx";
 
 const Article = () => {
     const [blocks, setBlocks] = useState([]);
     const [dialogOpen, setDialogOpen] = useState(false);
-
     const [articleData, setArticleData] = useAtom(articleAtom);
-    const selectedBlock = useAtomValue(selectedBlockAtom);
     const setFootnotes = useSetAtom(footnotesAtom);
-
+    const selectedBlock = useAtomValue(selectedBlockAtom);
 
     useEffect(() => {
         setBlocks(Blocks);
@@ -30,23 +33,18 @@ const Article = () => {
 
     return (
         <>
-            <div className="w-full flex justify-center content-center">
-                <div className="article-root my-12 mb-24">
-                    <RewriteSheet blockData={selectedBlock} open={dialogOpen} onOpenChange={setDialogOpen}/>
-                    <div className={"mx-14"}>
-                        <ArticleHeader className="text-black">
-                            {articleData?.title}
-                        </ArticleHeader>
-                        <Attribution>
-                            {articleData?.author?.name} - {articleData?.created_at}
-                        </Attribution>
-                    </div>
-                    {blocks.map(blockData => (
-                        <Block key={blockData.id + '-block'} blockData={blockData} setOpen={setDialogOpen}/>
-                    ))}
-                </div>
+            <nav className={"h-14 w-full fixed flex justify-between items-center z-50"}>
+                <MobileNavbar/>
+                <SmNavbar/>
+                <LgNavbar/>
+            </nav>
+            <div
+                className={"w-screen max-w-screen min-w-screen h-screen max-h-screen min-h-screen snap-y snap-mandatory overflow-y-scroll"}>
+                <RewriteSheet blockData={selectedBlock} open={dialogOpen} onOpenChange={setDialogOpen}/>
+                {blocks.map(blockData => (
+                    <Page key={blockData.id + '-page'} blockData={blockData} setOpen={setDialogOpen}/>
+                ))}
             </div>
-            <Footer/>
         </>
     );
 };

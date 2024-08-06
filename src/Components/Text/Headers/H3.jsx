@@ -4,7 +4,7 @@ const H3 = ({ blockData }) => {
 
     return (
         <h3 className="text-xl">
-            <TextContent content={blockData.content}/>
+            <TextContent content={blockData.content} className={"text-center"}/>
         </h3>
     );
 

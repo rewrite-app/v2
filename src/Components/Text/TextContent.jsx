@@ -37,7 +37,7 @@ const TextContent = ({ content, className }) => {
     };
 
     return (
-        <p className={`text-left ${className}`} key={keygen()}>
+        <p className={`text-left z-0 ${className}`} key={keygen()}>
             {content.map(chunk => render(chunk))}
         </p>
     );

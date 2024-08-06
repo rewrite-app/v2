@@ -21,6 +21,7 @@ import { useSetAtom } from "jotai";
 import { selectedBlockAtom } from "@/atoms/selectedBlockAtom.js";
 import { permittedSocialTypes } from "@/helpers.js";
 import EmailSignUp from "@/Components/Interactive/Email.jsx";
+import MultiBlock from "@/Components/Core/MultiBlock.jsx";
 
 
 export const componentRegistry = {
@@ -36,90 +37,30 @@ export const componentRegistry = {
     panel: RewritePanel,
     embed: Embed,
     email_signup: EmailSignUp,
+    multi_block: MultiBlock,
 };
 
-const Block = ({ blockData, sidebars, setOpen }) => {
-    const [socialData, setSocialData] = useState({});
-    const [footnoteData, setFootnoteData] = useState({});
-    const setSelectedBlock = useSetAtom(selectedBlockAtom);
+const Block = ({ blockData }) => {
+    let conditionalStyle = '';
 
-    if (sidebars == null) sidebars = true;
+    if (permittedSocialTypes.includes(blockData.type)) {
+        conditionalStyle = 'hover:cursor-pointer';
+    }
 
-    useEffect(() => {
-        setSocialData(blockData.social);
-        setFootnoteData(blockData.footnote);
-    }, []);
+    const Component = componentRegistry[blockData.type];
 
-    const handleMouseClick = (event) => {
-        setSelectedBlock(blockData);
-        setOpen(true);
-    };
+    if (!blockData.type) return null;
 
-    const renderLSidebar = () => {
-        if (sidebars === false) return null;
-        return (
-            <div className="w-10 h-full flex flex-col justify-center items-center">
-                {blockData.footnote?.enabled ?
-                    <RewriteDialog Trigger={Info} title={footnoteData.title}>
-                        {footnoteData?.blocks?.map(blockData => (
-                            <Block key={blockData.id + '-block'} blockData={blockData} sidebars={false}/>
-                        ))}
-                    </RewriteDialog>
-                    : null
-                }
-            </div>
-        );
-    };
-
-    const renderCenterDiv = () => {
-        let conditionalStyle = '';
-
-        if (permittedSocialTypes.includes(blockData.type)) {
-            conditionalStyle = 'hover:cursor-pointer';
-        }
-
-        const Component = componentRegistry[blockData.type];
-
-        return (
-            <div className={`flex-1 ${conditionalStyle}`}
-                 onClick={handleMouseClick}
-            >
+    return (
+        <div
+            className="my-0 py-2 w-full max-w-full flex justify-center items-center rounded-lg">
+            <div className={`flex-1 ${conditionalStyle} w-full min-w-full max-w-full h-full max-h-full min-h-full`}>
                 {blockData &&
                     <Component key={blockData.id + '-component'}
                                blockData={blockData}
                     />
                 }
             </div>
-        );
-    };
-
-    const renderRSidebar = () => {
-        if (sidebars === false) return null;
-        const sidebarCondition = socialData?.enabled && socialData?.numComments !== 0;
-        return (
-            <div
-                className={`w-14 h-full flex space justify-between items-center rounded-xl transition duration-100 ease-in-out hover:cursor-pointer text-neutral-400`}>
-                <div className={`flex items-center transition duration-100 hover:text-neutral-500`}>
-                    {sidebarCondition &&
-                        <>
-                            <AiOutlineComment className={`mx-1`} size={"1.7em"} onClick={handleMouseClick}/>
-                            <span
-                                className="text-sm font-medium">{socialData?.numComments || null}</span>
-                        </>
-                    }
-                </div>
-            </div>
-        );
-    };
-
-
-    if (!blockData.type) return null;
-    return (
-        <div
-            className="my-0 py-2 w-full max-w-full flex justify-center items-center rounded-lg">
-            {renderLSidebar()}
-            {renderCenterDiv()}
-            {renderRSidebar()}
         </div>
     );
 };

@@ -40,9 +40,9 @@ const RewriteSheet = ({ blockData, ...props }) => {
 
     return (
         <Sheet {...props}>
-            <SheetContent className={"w-5/12 px-6 pt-8"}>
+            <SheetContent className={"w-11/12 sm:w-8/12 md:w-6/12 max-w-[520px] px-6 pt-8"}>
                 <SheetHeader>
-                    <SheetTitle className={"text-xl mb-2"}>{articleData?.title}</SheetTitle>
+                    <SheetTitle className={""}>{articleData?.title}</SheetTitle>
                 </SheetHeader>
 
                 <div className={"mt-1 mb-4"}>
@@ -50,7 +50,7 @@ const RewriteSheet = ({ blockData, ...props }) => {
                 </div>
 
                 <hr className={""}/>
-                <div className={"py-3 flex justify-between content-center items-center text-neutral-500"}>
+                <div className={"py-3 flex justify-between content-center items-center text-neutral-400"}>
                     <AiOutlineComment className={"text-2xl"}/>
                     <AiOutlineHeart className={"text-2xl"}/>
                     <MdBookmarkBorder className={"text-2xl"}/>
