@@ -19,7 +19,7 @@ const ArticleHeader = () => {
                 <div className={"w-96 h-96 flex flex-col justify-center content-center mb-6"}>
                     <StandardImage blockData={standardImageData} edges={false} floating/>
                 </div>
-                <h1 className={"text-2xl sm:text-5xl"}>
+                <h1 className={"text-2xl sm:text-5xl/[58px]"}>
                     {articleData?.title}
                 </h1>
                 <div className={"flex justify-center content-center items-center mt-2 sm:mt-6"}>

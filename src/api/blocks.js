@@ -162,107 +162,6 @@ export const Blocks = [
         ]
     },
     {
-        id: 10,
-        type: "panel",
-        social: {
-            numComments: 4,
-            comments: []
-        },
-        footnote: {
-            enabled: false
-        },
-        items: [
-            {
-                title: "Religious Burials",
-                blocks: [
-                    {
-                        id: 11,
-                        type: "paragraph",
-                        content: [
-                            {
-                                type: "rich_text",
-                                text: "Although the first instances of religious devotion is entirely conjectural, the earliest known intentional burials are found at the site of Qazfeh",
-                                annotations: {
-                                    bold: false,
-                                    italic: false,
-                                }
-                            },
-                            {
-                                type: "footnote",
-                                reference_id: "qazfeh",
-                            },
-                            {
-                                type: "rich_text",
-                                text: " in Israel, going back roughly 100,000 years. These burials included tools and other artifacts placed in graves alongside the deceased, indicating a belief in the continuation of life after death.",
-                                annotations: {
-                                    bold: false,
-                                    italic: false,
-                                }
-                            },
-                        ]
-                    },
-                    {
-                        id: 25,
-                        type: "image",
-                        src: "./article/img-9-small480.jpg",
-                        content: [
-                            {
-                                type: "rich_text",
-                                text: "Qazfeh 11 burial picture and drawing. Source: ",
-                            },
-                            {
-                                type: "link_to_page",
-                                text: "https://journals.openedition.org/paleo/4848"
-                            }
-                        ]
-                    },
-                ]
-            },
-            {
-                title: "Göbekli Tepe",
-                blocks: [
-                    {
-                        id: 12,
-                        type: "paragraph",
-                        content: [
-                            {
-                                type: "rich_text",
-                                text: "Göbekli Tepe was re-excavated in 1993 and discovered to be one of the oldest religious ritual sites ever discovered. Described as a “Cathedral on a hill” by the excavator "
-                            },
-                            {
-                                type: "rich_text",
-                                text: "Klaus Schmidt"
-                            },
-                            {
-                                type: "rich_text",
-                                text: ", Göbekli Tepe contains over 20 circular stone enclosures, each containing monumental T-shaped limestone pillars weighing over 16 tons. Religious iconography remains etched into the pillars, with reliefs of animals in various different forms found throughout the site. At over 10,000 years old, this is the oldest of its kind ever discovered.",
-                            },
-                            {
-                                type: "footnote",
-                                reference_id: "gobekli-tepe"
-                            }
-                        ]
-                    },
-                    {
-                        id: 96,
-                        type: "image",
-                        src: "./article/gobekli-tepe.jpg",
-                        content: [
-                            {
-                                type: "rich_text",
-                                text: "Göbekli Tepe. Source: ",
-                            },
-                            {
-                                type: "link_to_page",
-                                text: "https://en.wikipedia.org/wiki/G%C3%B6bekli_Tepe"
-                            }
-                        ]
-                    }
-                ]
-            },
-        ]
-    },
-    {
         id: 6,
         type: "paragraph",
         footnote: {
@@ -442,7 +341,7 @@ export const Blocks = [
     },
     {
         id: 28,
-        type: "h2",
+        type: "h3",
         content: [
             {
                 type: "rich_text",
@@ -964,70 +863,76 @@ export const Blocks = [
         ]
     },
     {
-        type: "h2",
-        social: {
-            numComments: 0,
-            comments: []
-        },
-        content: [
+        type: "multi_block",
+        blocks: [
             {
-                type: "rich_text",
-                text: "How to Actually Help Yourself",
-                annotations: {
-                    italic: false,
-                    bold: true
-                }
-            }
-        ]
-    },
-    {
-        type: "paragraph",
-        social: {
-            enabled: true,
-            numComments: 2,
-            comments: []
-        },
-        content: [
-            {
-                type: "rich_text",
-                text: "As I explained earlier, helping yourself becomes much easier once you have ",
-                annotations: {
-                    italic: false,
-                    bold: false
-                }
+                type: "h3",
+                social: {
+                    numComments: 0,
+                    comments: []
+                },
+                content: [
+                    {
+                        type: "rich_text",
+                        text: "How to Actually Help Yourself",
+                        annotations: {
+                            italic: false,
+                            bold: true
+                        }
+                    }
+                ]
             },
             {
-                type: "rich_text",
-                text: "awareness",
-                annotations: {
-                    italic: true,
-                    bold: false
-                }
+                type: "paragraph",
+                social: {
+                    enabled: true,
+                    numComments: 2,
+                    comments: []
+                },
+                content: [
+                    {
+                        type: "rich_text",
+                        text: "As I explained earlier, helping yourself becomes much easier once you have ",
+                        annotations: {
+                            italic: false,
+                            bold: false
+                        }
+                    },
+                    {
+                        type: "rich_text",
+                        text: "awareness",
+                        annotations: {
+                            italic: true,
+                            bold: false
+                        }
+                    },
+                    {
+                        type: "rich_text",
+                        text: " of a problem and ",
+                        annotations: {
+                            italic: false,
+                            bold: false
+                        }
+                    },
+                    {
+                        type: "rich_text",
+                        text: "why",
+                        annotations: {
+                            italic: true,
+                            bold: false
+                        }
+                    },
+                    {
+                        type: "rich_text",
+                        text: " it is occurring. In awareness we have clarity, and with clarity the path forward becomes obvious. This best illustrated with an example.",
+                        annotations: {
+                            italic: false,
+                            bold: false
+                        }
+                    }
+                ]
             },
-            {
-                type: "rich_text",
-                text: " of a problem and ",
-                annotations: {
-                    italic: false,
-                    bold: false
-                }
-            },
-            {
-                type: "rich_text",
-                text: "why",
-                annotations: {
-                    italic: true,
-                    bold: false
-                }
-            },
-            {
-                type: "rich_text",
-                text: " it is occurring. In awareness we have clarity, and with clarity the path forward becomes obvious. This best illustrated with an example.",
-                annotations: {
-                    italic: false,
-                    bold: false
-                }
-            }
+
         ]
     },
     {
@@ -1085,39 +990,44 @@ export const Blocks = [
         ]
     },
     {
-        type: "paragraph",
+        type: "multi_block",
         social: {
             enabled: true,
             numComments: 0,
             comments: []
         },
-        content: [
+        blocks: [
             {
-                type: "rich_text",
-                text: "We can summarize Jakes career anxiety into the following diagram:",
-                annotations: {
-                    italic: false,
-                    bold: false
-                }
-            }
-        ]
-    },
-    {
-        type: "image",
-        social: {
-            enabled: true,
-            numComments: 19,
-            comments: []
-        },
-        src: "./article/career-anxiety.jpeg",
-        content: [
+                type: "paragraph",
+                content: [
+                    {
+                        type: "rich_text",
+                        text: "We can summarize Jakes career anxiety into the following diagram:",
+                        annotations: {
+                            italic: false,
+                            bold: false
+                        }
+                    }
+                ]
+            },
             {
-                type: "rich_text",
-                text: "Jake's career anxiety.",
-                annotations: {
-                    italic: false,
-                    bold: false
-                }
+                type: "image",
+                src: "./article/career-anxiety.jpeg",
+                social: {
+                    enabled: true,
+                    numComments: 19,
+                    comments: []
+                },
+                content: [
+                    {
+                        type: "rich_text",
+                        text: "Jake's career anxiety.",
+                        annotations: {
+                            italic: false,
+                            bold: false
+                        }
+                    }
+                ]
             }
         ]
     },
@@ -1778,24 +1688,34 @@ export const Blocks = [
         ]
     },
     {
-        type: "paragraph",
+        type: "multi_block",
         social: {
-            enabled: true,
+            enabled: false,
             numComments: 0,
             comments: []
         },
-        content: [
+        blocks: [
             {
-                type: "rich_text",
-                text: "I hope you had as much fun reading this as I did creating it. This interface is an MVP reading application for @buildspace.so. If you’d like to get updates on the application, or you would eventually like to write your own, drop your email below :)",
-                annotations: {
-                    italic: false,
-                    bold: false
-                }
+                type: "paragraph",
+                social: {
+                    enabled: true,
+                    numComments: 0,
+                    comments: []
+                },
+                content: [
+                    {
+                        type: "rich_text",
+                        text: "I hope you had as much fun reading this as I did creating it. This interface is an MVP reading application for @buildspace.so. If you’d like to get updates on the application, or you would eventually like to write your own, drop your email below :)",
+                        annotations: {
+                            italic: false,
+                            bold: false
+                        }
+                    }
+                ]
+            },
+            {
+                type: "email_signup",
             }
         ]
     },
-    {
-        type: "email_signup",
-    }
 ];

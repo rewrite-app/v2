@@ -1,6 +1,9 @@
 import TextContent from "@/Components/Text/TextContent.jsx";
 
 const StandardImage = ({ blockData, edges, floating }) => {
+    edges = edges ?? true;
+    floating = floating ?? false;
+
     return (
         <div className={`w-full flex flex-col content-center items-center my-2 ${floating && 'floating'}`}>
             <img

@@ -43,10 +43,10 @@ const RewriteSheet = ({ blockData, ...props }) => {
         <Sheet {...props}>
             <SheetContent className={"w-11/12 sm:w-8/12 md:w-6/12 max-w-[520px] px-6 pt-8"}>
                 <SheetHeader>
-                    <SheetTitle className={"text-left"}>{articleData?.title}</SheetTitle>
+                    <SheetTitle className={"text-left text-xl sm:text-2xl"}>{articleData?.title}</SheetTitle>
                 </SheetHeader>
 
-                <div className={"mt-1 mb-4"}>
+                <div className={"mt-4 mb-8"}>
                     {renderBlock()}
                 </div>
 

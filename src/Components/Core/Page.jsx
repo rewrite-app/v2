@@ -114,7 +114,7 @@ const Page = ({ blockData, setOpen, sidebars }) => {
             className={"w-full h-full flex justify-center snap-always snap-start"}>
             {renderLSidebar()}
             <div
-                className={"relative w-10/12 sm:w-8/12 md:w-8/12 lg:w-6/12 pl-3 pr-1 sm:pl-6 sm:pr-3 h-full flex flex-col justify-center hover:cursor-pointer border-s border-neutral-200"}
+                className={"relative w-10/12 sm:w-8/12 md:w-8/12 lg:w-6/12 pl-3 pr-1 sm:pl-6 sm:pr-3 h-full flex flex-col justify-center hover:cursor-pointer border-l border-neutral-200"}
                 onClick={handleMouseClick}
             >
                 {blockData && <Component key={blockData.id + '-component'} blockData={blockData}/>}
