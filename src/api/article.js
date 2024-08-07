@@ -1,7 +1,7 @@
 export const article = {
     created_at: "June 28, 2024",
     updated_at: "June 30, 2024",
-    title: "God, Capitalism, and the Paradox of Self-Help",
+    title: "God, Capitalism, & the Paradox of Self-Help",
     subtitle: "",
     author: {
         name: "Marcelo Mantilla",

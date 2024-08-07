@@ -1,89 +1,100 @@
 export const Blocks = [
     {
         id: 0,
-        type: "h3",
-        sidebar: false,
-        content: [
-            {
-                type: "rich_text",
-                text: "Humans beings have an innate need to aspire to God.",
-                annotations: {
-                    bold: true,
-                    italic: false,
-                }
-            },
-        ],
-    },
-    {
-        id: 1,
-        type: "paragraph",
-        footnote: {
-            enabled: true,
-            title: "Northern Lights",
-            blocks: [
-                {
-                    type: "paragraph",
-                    id: 13,
-                    content: [
-                        {
-                            type: "rich_text",
-                            text: "Perhaps fireworks serve as the Northern Lights of the modern world. Our desire for the divine is etched into every aspect of society – we must only learn to look.",
-                            annotations: {
-                                bold: false,
-                                italic: false,
-                            }
-                        }
-                    ]
-                },
-                {
-                    type: "image",
-                    id: 999,
-                    src: "./article/fireworks.gif",
-                    content: [
-                        {
-                            type: "rich_text",
-                            text: "Fireworks display during Canada Day in Bronte, Ontario.",
-                            annotations: {
-                                bold: false,
-                                italic: false
-                            }
-                        },
-                    ]
-                }
-            ],
-        },
+        type: "multi_block",
         social: {
             enabled: true,
-            likes: 12,
-            numComments: 23,
+            numComments: 0,
             comments: []
         },
-        content: [
+        blocks: [
             {
-                type: "rich_text",
-                text: "Those that disagree with the above just have a God that manifests itself differently. Sometimes ones deity of choice is POTUS, the Universe, or the promise of Crypto. Sometimes it’s just God. Regardless, ",
-                annotations: {
-                    bold: false,
-                    italic: false,
-                }
+                id: 0,
+                type: "h3",
+                sidebar: false,
+                content: [
+                    {
+                        type: "rich_text",
+                        text: "Humans beings have an innate need to aspire to God.",
+                        annotations: {
+                            bold: true,
+                            italic: false,
+                        }
+                    },
+                ],
             },
             {
-                type: "rich_text",
-                text: "God",
-                annotations: {
-                    italic: true,
-                    bold: false,
+                id: 1,
+                type: "paragraph",
+                footnote: {
+                    enabled: true,
+                    title: "Northern Lights",
+                    blocks: [
+                        {
+                            type: "paragraph",
+                            id: 13,
+                            content: [
+                                {
+                                    type: "rich_text",
+                                    text: "Perhaps fireworks serve as the Northern Lights of the modern world. Our desire for the divine is etched into every aspect of society – we must only learn to look.",
+                                    annotations: {
+                                        bold: false,
+                                        italic: false,
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            type: "image",
+                            id: 999,
+                            src: "./article/fireworks.gif",
+                            content: [
+                                {
+                                    type: "rich_text",
+                                    text: "Fireworks display during Canada Day in Bronte, Ontario.",
+                                    annotations: {
+                                        bold: false,
+                                        italic: false
+                                    }
+                                },
+                            ]
+                        }
+                    ],
                 },
+                social: {
+                    enabled: true,
+                    likes: 12,
+                    numComments: 23,
+                    comments: []
+                },
+                content: [
+                    {
+                        type: "rich_text",
+                        text: "Those that disagree with the above just have a God that manifests itself differently. Sometimes ones deity of choice is POTUS, the Universe, or the promise of Crypto. Sometimes it’s just God. Regardless, ",
+                        annotations: {
+                            bold: false,
+                            italic: false,
+                        }
+                    },
+                    {
+                        type: "rich_text",
+                        text: "God",
+                        annotations: {
+                            italic: true,
+                            bold: false,
+                        },
+                    },
+                    {
+                        type: "rich_text",
+                        text: " represents a profound ideal embedded deep into our psyche, which without, will almost always lead to nihilism and despair.",
+                        annotations: {
+                            italic: false,
+                            bold: false,
+                        }
+                    }
+                ],
             },
-            {
-                type: "rich_text",
-                text: " represents a profound ideal embedded deep into our psyche, which without, will almost always lead to nihilism and despair.",
-                annotations: {
-                    italic: false,
-                    bold: false,
-                }
-            }
-        ],
+        ]
     },
     {
         type: "multi_block",

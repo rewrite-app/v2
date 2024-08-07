@@ -30,6 +30,7 @@ const RewriteSheet = ({ blockData, ...props }) => {
     }
 
     const renderBlock = () => {
+        console.log('SHEET blockData', blockData);
         const Component = componentRegistry[blockData?.type];
         if (!blockData) return null;
 
@@ -42,7 +43,7 @@ const RewriteSheet = ({ blockData, ...props }) => {
         <Sheet {...props}>
             <SheetContent className={"w-11/12 sm:w-8/12 md:w-6/12 max-w-[520px] px-6 pt-8"}>
                 <SheetHeader>
-                    <SheetTitle className={""}>{articleData?.title}</SheetTitle>
+                    <SheetTitle className={"text-left"}>{articleData?.title}</SheetTitle>
                 </SheetHeader>
 
                 <div className={"mt-1 mb-4"}>

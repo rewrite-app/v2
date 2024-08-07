@@ -7,7 +7,6 @@ import Blockquote from "@/Components/Text/Blockquote.jsx";
 import LinkToPage from "@/Components/Text/LinkToPage.jsx";
 import RewriteCarousel from "@/Components/Complex/RewriteCarousel.jsx";
 import Paragraph from "@/Components/Text/Paragraph.jsx";
-import RewriteSheet from "@/Components/Complex/RewriteSheet.jsx";
 import RewritePanel from "@/Components/Complex/RewritePanel.jsx";
 import RewriteDialog from "@/Components/Complex/RewriteDialog.jsx";
 import StandardImage from "@/Components/Misc/StandardImage.jsx";
@@ -33,7 +32,6 @@ export const componentRegistry = {
     center_quote: Centerquote,
     image: StandardImage,
     carousel: RewriteCarousel,
-    sheet: RewriteSheet,
     panel: RewritePanel,
     embed: Embed,
     email_signup: EmailSignUp,

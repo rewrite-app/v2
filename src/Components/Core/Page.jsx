@@ -6,7 +6,6 @@ import Blockquote from "@/Components/Text/Blockquote.jsx";
 import Centerquote from "@/Components/Text/Centerquote.jsx";
 import StandardImage from "@/Components/Misc/StandardImage.jsx";
 import RewriteCarousel from "@/Components/Complex/RewriteCarousel.jsx";
-import RewriteSheet from "@/Components/Complex/RewriteSheet.jsx";
 import RewritePanel from "@/Components/Complex/RewritePanel.jsx";
 import Embed from "@/Components/Complex/Embed.jsx";
 import EmailSignUp from "@/Components/Interactive/Email.jsx";
@@ -14,7 +13,6 @@ import { useEffect, useState } from "react";
 import { AiFillHeart, AiOutlineComment, AiOutlineEllipsis, AiOutlineHeart } from "react-icons/ai";
 import { useSetAtom } from "jotai";
 import { selectedBlockAtom } from "@/atoms/selectedBlockAtom.js";
-import { MdBookmarkBorder } from "react-icons/md";
 import RewriteDialog from "@/Components/Complex/RewriteDialog.jsx";
 import Info from "@/Components/Interactive/Info.jsx";
 import Block from "@/Components/Core/Block.jsx";
@@ -30,7 +28,6 @@ export const componentRegistry = {
     center_quote: Centerquote,
     image: StandardImage,
     carousel: RewriteCarousel,
-    sheet: RewriteSheet,
     panel: RewritePanel,
     embed: Embed,
     email_signup: EmailSignUp,
@@ -51,8 +48,8 @@ const Page = ({ blockData, setOpen, sidebars }) => {
     }, []);
 
     const handleMouseClick = (event) => {
+        console.log('blockData XYZ', blockData);
         setSelectedBlock(blockData);
-        console.log("block data: ", blockData);
         setOpen(true);
     };
 
@@ -92,7 +89,7 @@ const Page = ({ blockData, setOpen, sidebars }) => {
                                 className={`flex justify-center items-center text-orange-400 transition ease-in-out`}>
                                 <AiFillHeart className={`mx-1`} size={"1.7em"} onClick={handleLikeClick}/>
                             </div>
-                            <span className={`text-sm font-semibold text-neutral-400`}>
+                            <span className={`text-md font-medium text-neutral-400`}>
                                 {blockData?.social?.likes}
                             </span>
                         </>
@@ -117,7 +114,7 @@ const Page = ({ blockData, setOpen, sidebars }) => {
             className={"w-full h-full flex justify-center snap-always snap-start"}>
             {renderLSidebar()}
             <div
-                className={"relative w-10/12 sm:w-8/12 md:w-6/12 pl-3 pr-1 sm:px-4 h-full flex flex-col justify-center hover:cursor-pointer border-s border-neutral-200"}
+                className={"relative w-10/12 sm:w-8/12 md:w-8/12 lg:w-6/12 pl-3 pr-1 sm:pl-6 sm:pr-3 h-full flex flex-col justify-center hover:cursor-pointer border-s border-neutral-200"}
                 onClick={handleMouseClick}
             >
                 {blockData && <Component key={blockData.id + '-component'} blockData={blockData}/>}

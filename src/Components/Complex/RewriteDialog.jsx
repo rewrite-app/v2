@@ -15,7 +15,7 @@ const RewriteDialog = ({ Trigger, title, children }) => {
             </DialogTrigger>
             <DialogContent className="">
                 <DialogHeader>
-                    <DialogTitle className={'mb-2'}>{title ? title : 'Footnote'}</DialogTitle>
+                    <DialogTitle className={'mb-2 text-left sm:text-2xl'}>{title ? title : 'Footnote'}</DialogTitle>
                     {children}
                 </DialogHeader>
             </DialogContent>

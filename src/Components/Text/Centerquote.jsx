@@ -6,7 +6,7 @@ export const Centerquote = ({ blockData }) => {
             <hr className={"rounded border-1"}/>
             <blockquote
                 className={`text-center italic text-lg px-8 py-6 flex justify-center items-center text-neutral-700`}>
-                <TextContent content={blockData.content} className={"text-center"}/>
+                <TextContent content={blockData.content} className={"text-center sm:text-2xl text-neutral-500"}/>
             </blockquote>
             <hr className={"rounded border-1"}/>
         </div>

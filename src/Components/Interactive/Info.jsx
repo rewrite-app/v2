@@ -6,7 +6,7 @@ const Info = ({ props }) => {
 
     return (
         <Button size={'icon'} className={"bg-transparent hover:bg-transparent"} {...props}>
-            <AiOutlineInfoCircle className={`${iconStyling} text-neutral-400`} size={"1.7em"}/>
+            <AiOutlineInfoCircle className={`${iconStyling} text-neutral-400`} size={"2em"}/>
         </Button>
     );
 };

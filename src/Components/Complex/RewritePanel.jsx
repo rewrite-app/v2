@@ -35,7 +35,6 @@ const RewritePanel = ({ blockData }) => {
                 {item?.blocks?.map(blockData => (
                     <Block key={keygen()} blockData={blockData} sidebars={false}/>
                 ))}
-                <TextContent content={item?.blocks?.content}/>
             </TabsContent>
         ));
     };
